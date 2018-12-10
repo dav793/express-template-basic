@@ -8,8 +8,8 @@
     "serve": "export NODE_ENV=production && node dist/index.js",
     "build": "tsc",
     "build:watch": "tsc --watch",
-    "test": "tsc && concurrently --kill-others \"tsc --watch\" \"mocha --watch --timeout 480000 --reporter spec dist/specs/**/*.spec.js\"",
-    "test:once": "tsc && mocha --timeout 480000 --reporter spec dist/specs/**/*.spec.js"
+    "test": "tsc && export NODE_ENV=test && concurrently --kill-others \"tsc --watch\" \"mocha --watch --timeout 480000 --reporter spec dist/specs/**/*.spec.js\"",
+    "test:once": "tsc && export NODE_ENV=test && mocha --timeout 480000 --reporter spec dist/specs/**/*.spec.js"
   },
   "author": "",
   "license": "ISC",
