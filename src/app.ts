@@ -2,9 +2,6 @@ import * as express from 'express';
 import * as morgan from 'morgan';
 import * as bodyParser from 'body-parser';
 
-// routes
-import IndexRouter from './routes/index';
-
 const env = require('../config/environment');
 const logger = require('./winston');
 
@@ -34,7 +31,10 @@ class App {
 
     // Configure API endpoints.
     private routes(): void {
-        this.express.use('/', IndexRouter);
+        if (!env.CLIENT_PATH)
+            console.warn("client path was not set!");
+
+        this.express.use('/', express.static(env.CLIENT_PATH));
 
         // 404 response
         this.express.all('*', (req: any, res: any) => {

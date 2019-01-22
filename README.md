@@ -5,6 +5,8 @@
 ### Description
 Basic http + web sockets server application supporting logging (using winston.js) and unit tests (using mocha/chai).
 
+Branch 'with-frontend-app' serves a pre-built angular application. Make sure to point CLIENT_PATH in config/environment.js to the dist folder of a pre-built angular application.
+
 ### Usage
 
 * ```npm start``` compile to /dist and serve application + watch for source changes.
