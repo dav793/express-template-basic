@@ -27,6 +27,11 @@ coverage
 benchmarks/graphs
 
 
+# IDE
+.idea/
+.idea/workspace.xml
+
+
 # Application
 dist
 log/**/*.log
